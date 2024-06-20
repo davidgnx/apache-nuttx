@@ -41,7 +41,7 @@ permissions:
 jobs:
   # Push image to GitHub Packages.
   push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       IMAGE_TAG: ghcr.io/${{ github.repository }}/apache-nuttx-ci-linux
     steps:

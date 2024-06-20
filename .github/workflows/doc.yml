@@ -25,12 +25,12 @@ permissions:
 
 jobs:
   build-html:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.8'
+          python-version: '3.12.3'
       - name: Install LaTeX packages
         run: |
           sudo apt-get update -y

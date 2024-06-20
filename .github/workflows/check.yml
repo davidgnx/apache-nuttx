@@ -26,13 +26,13 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout nuttx repo
         uses: actions/checkout@v4
         with:
-          repository: apache/nuttx
+          repository: davidgnx/apache-nuttx
           path: nuttx
           fetch-depth: 0
 
