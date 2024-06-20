@@ -29,8 +29,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-#        with:
-#          python-version: '3.11.2'
+        with:
+          python-version: '3.8'
       - name: Install LaTeX packages
         run: |
           sudo apt-get update -y
