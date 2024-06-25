@@ -110,10 +110,11 @@ jobs:
         run: tar zcf sources.tar.gz sources
 
       - name: Archive Source Bundle
-        run: |
-          rm -Rf /home/david/temp
-          mkdir /home/david/temp
-          cp sources.tar.gz /home/david/temp/sources.tar.gz
+        with:
+          run: |
+            rm -Rf /home/david/temp
+            mkdir /home/david/temp
+            cp sources.tar.gz /home/david/temp/sources.tar.gz
 #        uses: actions/upload-artifact@v3
 #        with:
 #          name: source-bundle
