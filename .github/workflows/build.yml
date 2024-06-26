@@ -22,6 +22,8 @@ on:
       - 'Documentation/**'
     branches:
       - master
+# Run on GitHub-Hosted Runners branch
+      - ghhosted
       - 'releases/*'
     tags:
 
@@ -34,7 +36,8 @@ concurrency:
 
 jobs:
   Fetch-Source:
-    runs-on: self-hosted
+#    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Determine Target Branches
         id: gittargets
@@ -110,31 +113,31 @@ jobs:
         run: tar zcf sources.tar.gz sources
 
       - name: Archive Source Bundle
-        run: cp -rf sources.tar.gz /home/david/temp/sources.tar.gz
-
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: source-bundle
-#          path: sources.tar.gz
+#        run: cp -rf sources.tar.gz /home/david/temp/sources.tar.gz
+        uses: actions/upload-artifact@v3
+        with:
+          name: source-bundle
+          path: sources.tar.gz
 
   Linux:
     needs: Fetch-Source
-    runs-on: self-hosted
+#    runs-on: self-hosted
+    runs-on: ubuntu-latest
     env:
       DOCKER_BUILDKIT: 1
 
     strategy:
       matrix:
-        boards: [arm-01, arm-02, arm-03, arm-04, arm-05, arm-06, arm-07, arm-08, arm-09, arm-10, arm-11, arm-12, arm-13, other, risc-v, sim-01, sim-02, xtensa]
-
+#        boards: [arm-01, arm-02, arm-03, arm-04, arm-05, arm-06, arm-07, arm-08, arm-09, arm-10, arm-11, arm-12, arm-13, other, risc-v, sim-01, sim-02, xtensa]
+        boards: [arm-10]
+        
     steps:
       - name: Download Source Artifact
-        run: cp /home/david/temp/sources.tar.gz sources.tar.gz
-
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: source-bundle
-#          path: .
+#        run: cp /home/david/temp/sources.tar.gz sources.tar.gz
+        uses: actions/download-artifact@v3
+        with:
+          name: source-bundle
+          path: .
 
       - name: Extract sources
         run: tar zxf sources.tar.gz
