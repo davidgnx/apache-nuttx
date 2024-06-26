@@ -25,23 +25,23 @@
 ### CMake,stm32butterfly2:nshusbhost
 
 # CMake,stm32f103-minimum:adb
-### CMake,stm32f103-minimum:apds9960
-### CMake,stm32f103-minimum:audio_tone
+# ## CMake,stm32f103-minimum:apds9960
+# ## CMake,stm32f103-minimum:audio_tone
 CMake,stm32f103-minimum:buttons
 CMake,stm32f103-minimum:hello
 # CMake,stm32f103-minimum:jlx12864g
-### CMake,stm32f103-minimum:lcd1602
-### CMake,stm32f103-minimum:mcp2515
-### CMake,stm32f103-minimum:nrf24
+# ## CMake,stm32f103-minimum:lcd1602
+# ## CMake,stm32f103-minimum:mcp2515
+# ## CMake,stm32f103-minimum:nrf24
 CMake,stm32f103-minimum:nsh
-### CMake,stm32f103-minimum:pwm
-### CMake,stm32f103-minimum:rfid-rc522
-### CMake,stm32f103-minimum:rgbled
+# ## CMake,stm32f103-minimum:pwm
+# ## CMake,stm32f103-minimum:rfid-rc522
+# ## CMake,stm32f103-minimum:rgbled
 # CMake,stm32f103-minimum:sensors
 # CMake,stm32f103-minimum:ssd1306
-### CMake,stm32f103-minimum:usbnsh
-### CMake,stm32f103-minimum:userled
-### CMake,stm32f103-minimum:veml6070
+# ## CMake,stm32f103-minimum:usbnsh
+# ## CMake,stm32f103-minimum:userled
+# ## CMake,stm32f103-minimum:veml6070
 
 ### CMake,stm32f334-disco:buckboost
 ### CMake,stm32f334-disco:nsh
